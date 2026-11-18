@@ -1,0 +1,53 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" role="img" aria-label="浅滩：只有气泡的水面">
+  <defs>
+    <linearGradient id="water" x1="0.1" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#e9f8fd"/>
+      <stop offset="0.45" stop-color="#cfeaf5"/>
+      <stop offset="1" stop-color="#b3d8e7"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="0.2" cy="0.02" r="0.62">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="0.55" stop-color="#ffffff" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ray" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#water)"/>
+  <rect width="1600" height="1000" fill="url(#sun)"/>
+
+  <g fill="url(#ray)">
+    <polygon points="180,0 320,0 520,1000 300,1000"/>
+    <polygon points="420,0 500,0 700,1000 560,1000"/>
+    <polygon points="640,0 700,0 900,1000 800,1000"/>
+    <polygon points="1050,0 1110,0 1320,1000 1220,1000"/>
+  </g>
+
+  <g fill="none" stroke="#ffffff" stroke-opacity="0.3" stroke-width="3">
+    <path d="M120 120 C220 90 320 150 420 118 C520 86 600 140 700 116"/>
+    <path d="M700 200 C790 176 880 226 970 200 C1060 174 1130 220 1210 202"/>
+    <path d="M240 300 C330 276 410 322 500 300"/>
+  </g>
+
+  <g fill="#ffffff">
+    <circle cx="330" cy="760" r="10" opacity="0.5"><animate attributeName="cy" from="880" to="-70" dur="26s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.6;0" dur="26s" repeatCount="indefinite"/></circle>
+    <circle cx="470" cy="700" r="6" opacity="0.45"><animate attributeName="cy" from="900" to="-60" dur="34s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.5;0" dur="34s" repeatCount="indefinite"/></circle>
+    <circle cx="640" cy="820" r="12" opacity="0.3"><animate attributeName="cy" from="950" to="-80" dur="42s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.35;0" dur="42s" repeatCount="indefinite"/></circle>
+    <circle cx="760" cy="820" r="8" opacity="0.4"><animate attributeName="cy" from="950" to="-70" dur="30s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.45;0" dur="30s" repeatCount="indefinite"/></circle>
+    <circle cx="905" cy="700" r="5" opacity="0.4"><animate attributeName="cy" from="880" to="-60" dur="22s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.5;0" dur="22s" repeatCount="indefinite"/></circle>
+    <circle cx="1080" cy="780" r="7" opacity="0.35"><animate attributeName="cy" from="920" to="-60" dur="32s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.4;0" dur="32s" repeatCount="indefinite"/></circle>
+    <circle cx="1180" cy="860" r="9" opacity="0.4"><animate attributeName="cy" from="960" to="-80" dur="38s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.42;0" dur="38s" repeatCount="indefinite"/></circle>
+    <circle cx="1380" cy="760" r="6" opacity="0.35"><animate attributeName="cy" from="900" to="-60" dur="28s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.4;0" dur="28s" repeatCount="indefinite"/></circle>
+  </g>
+
+  <g fill="#5aa9bf" opacity="0.3">
+    <path d="M520 480 l26 -12 0 24 z"/>
+    <path d="M566 508 l22 -10 0 20 z"/>
+    <path d="M486 526 l20 -9 0 18 z"/>
+    <path d="M1080 420 l24 -11 0 22 z"/>
+    <path d="M1120 448 l20 -9 0 18 z"/>
+  </g>
+</svg>

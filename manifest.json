@@ -1,0 +1,28 @@
+{
+  "apiVersion": 1,
+  "id": "fatfish-deepsea",
+  "name": "大肥鱼 · 深海",
+  "author": "音不绝",
+  "version": "0.1.0",
+  "description": "DeepSeek 的小鲸鱼「大肥鱼」二创：浅色是阳光透进的浅滩，深色是发光气泡的深海，界面像隔着一层磨砂水玻璃。右下角底层驻着穿女仆装的鲸鱼娘，四周一圈深海荧光把轮廓托起来，一眼认得出蓝发与鲸尾；带文字与按钮的面板、列表行、评论卡都垫着近乎不透明的水色底衬，人只在留白处露面，绝不挡字。空状态里还游着一只小大肥鱼。存在感分三档（柔和水印 / 清晰陪伴 / 鲜明主角），也可随时关闭。立绘二创自社区作品（CC BY-NC-SA 4.0，署名见 theme.css 顶部注释）。",
+  "options": [
+    { "id": "water", "type": "heading", "label": { "zh-Hans": "水景与大肥鱼", "en": "Water and Fatfish" }, "description": { "zh-Hans": "深海背景、女仆装鲸鱼娘陪伴度与磨砂水玻璃", "en": "Backdrop, maid whale girl presence and frosted glass" } },
+    { "id": "backdrop", "type": "toggle", "label": { "zh-Hans": "水景背景", "en": "Backdrop" }, "description": { "zh-Hans": "关掉后界面回到不透明实色", "en": "Turn off for a solid interface" }, "default": true },
+    { "id": "sea-life", "type": "select", "label": { "zh-Hans": "水下生物", "en": "Sea life" }, "default": "whale", "choices": [
+      { "value": "whale", "label": { "zh-Hans": "小鲸鱼巡游", "en": "Whale pod" } },
+      { "value": "bubbles", "label": { "zh-Hans": "只有气泡", "en": "Bubbles only" } }
+    ] },
+    { "id": "figure", "type": "toggle", "label": { "zh-Hans": "角色立绘", "en": "Character figure" }, "description": { "zh-Hans": "主视觉右下角底层的女仆装鲸鱼娘与大肥鱼徽章陪伴，面板与列表均垫有水玻璃底衬、绝不挡字与按钮", "en": "Maid whale girl and fatfish badges behind panels and controls; zero occlusion" }, "default": true },
+    { "id": "figure-presence", "type": "select", "label": { "zh-Hans": "立绘存在感", "en": "Figure presence" }, "description": { "zh-Hans": "调节女仆装大肥鱼的清晰度与存在感（各档均保持上层面板水玻璃防挡字保护）", "en": "Adjust visibility of the maid whale girl while keeping panels readable" }, "default": "companion", "choices": [
+      { "value": "companion", "label": { "zh-Hans": "清晰陪伴（推荐）", "en": "Clear companion" } },
+      { "value": "vivid", "label": { "zh-Hans": "鲜明主角", "en": "Vivid heroine" } },
+      { "value": "subtle", "label": { "zh-Hans": "柔和水印", "en": "Subtle watermark" } }
+    ] },
+    { "id": "glass-opacity", "type": "slider", "label": { "zh-Hans": "水玻璃浓度", "en": "Glass opacity" }, "description": { "zh-Hans": "越低越能看见背后的水与鲸鱼；浅色深色共用一个值", "en": "Lower shows more water; shared by both modes" }, "default": 72, "min": 55, "max": 100, "step": 1, "unit": "%" },
+    { "id": "glass-blur", "type": "slider", "label": { "zh-Hans": "磨砂模糊", "en": "Glass blur" }, "default": 12, "min": 0, "max": 30, "step": 1, "unit": "px" },
+    { "id": "shape", "type": "heading", "label": { "zh-Hans": "形状与排版", "en": "Shape and type" } },
+    { "id": "corner", "type": "slider", "label": { "zh-Hans": "圆润程度", "en": "Corner radius" }, "description": { "zh-Hans": "鲸鱼要圆一点才像大肥鱼", "en": "Rounder to match the chubby whale" }, "default": 0.75, "min": 0.25, "max": 1.25, "step": 0.05, "unit": "rem" },
+    { "id": "content-max-width", "type": "slider", "label": { "zh-Hans": "阅读栏宽", "en": "Reading width" }, "default": 68, "min": 48, "max": 84, "step": 2, "unit": "rem" },
+    { "id": "h1-italic", "type": "toggle", "label": { "zh-Hans": "标题斜体", "en": "Italic headings" }, "description": { "zh-Hans": "正文用衬线体，斜体像手写航海日志", "en": "Serif headings in italic" }, "default": false }
+  ]
+}

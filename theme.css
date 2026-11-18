@@ -1,0 +1,626 @@
+/*
+  大肥鱼 · 深海（fatfish-deepsea）
+  主题作者：音不绝
+
+  二创角色：DeepSeek 的吉祥物小鲸鱼「大肥鱼」→ 深海鲸少女。
+
+  两种水层：
+    浅色 = 浅滩（阳光透水、泡沫白、海玻璃青）
+    深色 = 深海（靛青夜色、发光气泡、鲸背剪影）
+  界面像隔着水层看：页面是磨砂玻璃，框体是更薄的一层水。
+
+  只使用 Multica 公开变量与锚点（docs/theming.md，apiVersion 1）。
+  不引入外部资源，所有 url() 都指向本主题 assets/ 下的 SVG 与 WebP。
+
+  角色立绘（assets/fatfish-dark.webp、fatfish-light.webp）：
+  「大肥鱼／鲸鱼娘」穿女仆装的单人立绘，取自 Pixiv 作品《AI娘化》第 1 页
+  （ZipZipPipe，https://www.pixiv.net/artworks/148186519），深色女仆裙、白围裙、
+  鲸尾与鱼鳍耳。精细去底（含发丝间封闭白底空洞剔除与边缘去白边）、按深浅两版调色、转 WebP。
+  署名链：原始角色形象「上善无形（上善）」；DeepSeek 女仆形象二次设计「ZipZipPipe」；
+      Q 版设定图参考「YunYueSama」（https://github.com/YunYueSama/codex-deepseek-pet）；
+      设定图整理「xiaoweigen」（https://github.com/xiaoweigen/deepseek-dafeiyu-assets）。
+  许可：CC BY-NC-SA 4.0（署名 · 非商业 · 相同方式共享），原作者说明「需要标注作者，不可商用」。
+  本主题中的修改：从单页插画去浅灰白底与发丝间封闭白洞、裁去多余留白、按深浅两色轻微调色、转 WebP。
+  完整署名与修改说明见仓库 CREDITS.md。
+*/
+
+/* ---------- 浅滩：浅色模式 ---------- */
+
+.theme-light {
+  /* 水色底 */
+  --app-shell: #deedf4;
+  --page-canvas: #f8fcfd;
+  --background: var(--page-canvas);
+  --surface: #ffffff;
+  --surface-foreground: #0a2530;
+  --surface-raised: #ffffff;
+  --surface-hover: #eef7f9;
+  --surface-selected: #dcf0f4;
+  --surface-selected-foreground: #07202b;
+  --surface-border: #cfe3e9;
+  --card: var(--surface);
+  --card-foreground: #0a2530;
+  --popover: var(--surface-raised);
+  --popover-foreground: #0a2530;
+
+  /* 文字 */
+  --foreground: #0a2530;
+  --muted-foreground: #476470;
+  --faint-foreground: #637f8c;
+
+  /* 品牌与强调：鲸鳍青 */
+  --brand: #0c6478;
+  --brand-foreground: #ffffff;
+  --primary: #0c6478;
+  --primary-foreground: #ffffff;
+  --secondary: #e3f1f4;
+  --secondary-foreground: #0a2530;
+  --muted: #eff6f8;
+  --accent: #e6f2f5;
+  --accent-foreground: #0a2530;
+  --border: #dceaee;
+  --input: #c9dfe5;
+  --ring: #0c6478;
+
+  /* 侧栏与轨道 */
+  --sidebar: #deedf4;
+  --sidebar-foreground: #0a2530;
+  --sidebar-primary: #0c6478;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #cbe4ec;
+  --sidebar-accent-foreground: #06202b;
+  --sidebar-border: #cfe3e9;
+  --sidebar-ring: #0c6478;
+
+  --rail-item-color: #476470;
+  --rail-item-hover-background: #dceff3;
+  --rail-item-active-background: #d2e9ef;
+  --rail-item-active-color: #06202b;
+
+  --nav-item-color: #476470;
+  --nav-item-hover-background: #eaf5f8;
+  --nav-item-hover-color: #0a2530;
+  --nav-item-active-background: #d9edf2;
+  --nav-item-active-color: #06202b;
+  --nav-item-radius: calc(var(--radius) * 1.25);
+
+  /* 状态：浅滩的生物色 */
+  --status-backlog: #6b8894;
+  --status-todo: #476470;
+  --status-in-progress: #b4620f;
+  --status-in-review: #2f7a46;
+  --status-done: #0b6e87;
+  --status-blocked: #b02a22;
+  --status-cancelled: #8598a1;
+
+  --priority-urgent: #b02a22;
+  --priority-high: #b4620f;
+  --priority-medium: #8f6a08;
+  --priority-low: #1f6fa8;
+  --priority-none: #8598a1;
+
+  --destructive: #b02a22;
+  --success: #2f7a46;
+  --warning: #b4620f;
+  --info: #1f6fa8;
+
+  --chart-1: #0c6478;
+  --chart-2: #2f8fa6;
+  --chart-3: #5cb3c4;
+  --chart-4: #93d2dd;
+  --chart-5: #c7e9ef;
+
+  --find-match: #b7ead9;
+  --find-match-active: #7fd8e6;
+  --find-match-foreground: #06202b;
+
+  /* 形状：鲸鱼式圆润 */
+  --radius: var(--corner, 0.75rem);
+  --page-radius: calc(var(--radius) * 2);
+  --card-radius: calc(var(--radius) * 1.6);
+  --dialog-radius: calc(var(--radius) * 1.8);
+  --menu-radius: calc(var(--radius) * 1.6);
+  --button-radius: calc(var(--radius) * 1.2);
+  --input-radius: calc(var(--radius) * 1.1);
+  --surface-shadow: 0 1px 2px rgb(10 37 48 / 0.05), 0 1px 1px rgb(10 37 48 / 0.03);
+  --floating-shadow: 0 18px 44px rgb(8 42 56 / 0.16), 0 4px 12px rgb(8 42 56 / 0.08);
+  --menu-shadow: 0 10px 26px rgb(8 42 56 / 0.10), 0 2px 6px rgb(8 42 56 / 0.06);
+  --icon-stroke-width: 1.85;
+
+  /* 排版：界面无衬线、正文衬线（像航海日志） */
+  --font-ui: "Segoe UI Variable Text", "Segoe UI", "Aptos", "Helvetica Neue", Arial;
+  --font-content-latin: "Georgia", "Iowan Old Style", "Charter", "Source Serif 4";
+  --font-mono: "Cascadia Code", "Consolas", "SF Mono", "Menlo";
+  --content-leading: 1.7;
+  --content-leading-cjk: 1.85;
+
+  /* 浮层 */
+  --tooltip: #08222c;
+  --tooltip-foreground: #e9f7fb;
+  --display-chip-pressed-background: var(--primary);
+  --display-chip-pressed-color: var(--primary-foreground);
+
+  /* 标签色板：晒过太阳的海玻璃 */
+  --palette-gray: #cfdde2;
+  --palette-red: #f7c7c1;
+  --palette-orange: #fad4b6;
+  --palette-yellow: #f6e7b0;
+  --palette-green: #c1e7cd;
+  --palette-teal: #b2e5e1;
+  --palette-blue: #c3daf5;
+  --palette-indigo: #ccd0f3;
+  --palette-purple: #dfcaf0;
+  --palette-pink: #f7c8dd;
+  --label-chip-color: #07202b;
+
+  /* 水景：第一层是右下角女仆立绘（也会透进真实窗口的 #multica-backdrop 磨砂层），第二层是浅滩水景 */
+  --backdrop:
+    url(assets/fatfish-light.webp) right 1.5rem bottom 0 / auto min(68vh, 30rem) no-repeat,
+    url(assets/shallow-whale.svg) center / cover no-repeat;
+  --backdrop-color: #cfe8f3;
+  --frame-glass-opacity: 64%;
+  --frame-glass-blur: 10px;
+}
+
+/* ---------- 深海：深色模式 ---------- */
+
+.theme-dark {
+  --app-shell: #06131c;
+  --page-canvas: #0a1d28;
+  --background: var(--page-canvas);
+  --surface: #0e2634;
+  --surface-foreground: #e6f5f9;
+  --surface-raised: #11303f;
+  --surface-hover: #14374a;
+  --surface-selected: #17415a;
+  --surface-selected-foreground: #f2fcfe;
+  --surface-border: rgb(255 255 255 / 12%);
+  --card: var(--surface);
+  --card-foreground: #e6f5f9;
+  --popover: var(--surface-raised);
+  --popover-foreground: #e6f5f9;
+
+  --foreground: #e6f5f9;
+  --muted-foreground: #9cbac7;
+  --faint-foreground: #7a97a4;
+
+  --brand: #5fd3e8;
+  --brand-foreground: #041c24;
+  --primary: #5fd3e8;
+  --primary-foreground: #041c24;
+  --secondary: #143244;
+  --secondary-foreground: #e6f5f9;
+  --muted: #10293a;
+  --accent: #143244;
+  --accent-foreground: #e6f5f9;
+  --border: rgb(255 255 255 / 8%);
+  --input: rgb(255 255 255 / 20%);
+  --ring: #5fd3e8;
+
+  --sidebar: #0a1d28;
+  --sidebar-foreground: #e6f5f9;
+  --sidebar-primary: #5fd3e8;
+  --sidebar-primary-foreground: #041c24;
+  --sidebar-accent: #17394c;
+  --sidebar-accent-foreground: #e6f5f9;
+  --sidebar-border: rgb(255 255 255 / 10%);
+  --sidebar-ring: #5fd3e8;
+
+  --rail-item-color: #9cbac7;
+  --rail-item-hover-background: #12303f;
+  --rail-item-active-background: #17394c;
+  --rail-item-active-color: #e6f5f9;
+
+  --nav-item-color: #9cbac7;
+  --nav-item-hover-background: #12303f;
+  --nav-item-hover-color: #e6f5f9;
+  --nav-item-active-background: #17394c;
+  --nav-item-active-color: #e6f5f9;
+
+  --status-backlog: #7a97a4;
+  --status-todo: #9cbac7;
+  --status-in-progress: #f0b44a;
+  --status-in-review: #6fd08c;
+  --status-done: #5fd3e8;
+  --status-blocked: #f2746b;
+  --status-cancelled: #6f8894;
+
+  --priority-urgent: #f2746b;
+  --priority-high: #f0975e;
+  --priority-medium: #f0b44a;
+  --priority-low: #6fb4f0;
+  --priority-none: #6f8894;
+
+  --destructive: #f2746b;
+  --success: #6fd08c;
+  --warning: #f0b44a;
+  --info: #6fb4f0;
+
+  --chart-1: #5fd3e8;
+  --chart-2: #3fa9bf;
+  --chart-3: #8fd9d2;
+  --chart-4: #4a8ba0;
+  --chart-5: #2b5d72;
+
+  --find-match: #2f7f6a;
+  --find-match-active: #3fa9bf;
+  --find-match-foreground: #021017;
+
+  --radius: var(--corner, 0.75rem);
+  --page-radius: calc(var(--radius) * 2);
+  --card-radius: calc(var(--radius) * 1.6);
+  --dialog-radius: calc(var(--radius) * 1.8);
+  --menu-radius: calc(var(--radius) * 1.6);
+  --button-radius: calc(var(--radius) * 1.2);
+  --input-radius: calc(var(--radius) * 1.1);
+  --surface-shadow: 0 1px 2px rgb(0 0 0 / 0.28), 0 1px 1px rgb(0 0 0 / 0.2);
+  --floating-shadow: 0 22px 52px rgb(0 0 0 / 0.5), 0 4px 12px rgb(0 0 0 / 0.3);
+  --menu-shadow: 0 12px 30px rgb(0 0 0 / 0.34), 0 2px 8px rgb(0 0 0 / 0.2);
+  --icon-stroke-width: 1.85;
+
+  --font-ui: "Segoe UI Variable Text", "Segoe UI", "Aptos", "Helvetica Neue", Arial;
+  --font-content-latin: "Georgia", "Iowan Old Style", "Charter", "Source Serif 4";
+  --font-mono: "Cascadia Code", "Consolas", "SF Mono", "Menlo";
+  --content-leading: 1.7;
+  --content-leading-cjk: 1.85;
+
+  --tooltip: #0e2634;
+  --tooltip-foreground: #e6f5f9;
+  --display-chip-pressed-background: var(--primary);
+  --display-chip-pressed-color: var(--primary-foreground);
+
+  --palette-gray: #a8bcc4;
+  --palette-red: #f7c7c1;
+  --palette-orange: #fad4b6;
+  --palette-yellow: #f6e7b0;
+  --palette-green: #c1e7cd;
+  --palette-teal: #b2e5e1;
+  --palette-blue: #c3daf5;
+  --palette-indigo: #ccd0f3;
+  --palette-purple: #dfcaf0;
+  --palette-pink: #f7c8dd;
+  --label-chip-color: #07202b;
+
+  --backdrop:
+    url(assets/fatfish-dark.webp) right 1.5rem bottom 0 / auto min(68vh, 30rem) no-repeat,
+    url(assets/deep-whale.svg) center / cover no-repeat;
+  --backdrop-color: #030d15;
+  --frame-glass-opacity: 70%;
+  --frame-glass-blur: 12px;
+}
+
+/* ---------- 选项：水景 ---------- */
+
+/* 水下生物：鲸群 / 只有气泡 */
+:root[data-theme-option-sea-life="bubbles"].theme-light {
+  --backdrop:
+    url(assets/fatfish-light.webp) right 1.5rem bottom 0 / auto min(68vh, 30rem) no-repeat,
+    url(assets/shallow-bubbles.svg) center / cover no-repeat;
+}
+
+:root[data-theme-option-sea-life="bubbles"].theme-dark {
+  --backdrop:
+    url(assets/fatfish-dark.webp) right 1.5rem bottom 0 / auto min(68vh, 30rem) no-repeat,
+    url(assets/deep-bubbles.svg) center / cover no-repeat;
+}
+
+/* 关掉角色立绘时，--backdrop 只保留水景 */
+:root:not([data-theme-option-figure]).theme-light {
+  --backdrop: url(assets/shallow-whale.svg) center / cover no-repeat;
+}
+
+:root:not([data-theme-option-figure]).theme-dark {
+  --backdrop: url(assets/deep-whale.svg) center / cover no-repeat;
+}
+
+:root:not([data-theme-option-figure])[data-theme-option-sea-life="bubbles"].theme-light {
+  --backdrop: url(assets/shallow-bubbles.svg) center / cover no-repeat;
+}
+
+:root:not([data-theme-option-figure])[data-theme-option-sea-life="bubbles"].theme-dark {
+  --backdrop: url(assets/deep-bubbles.svg) center / cover no-repeat;
+}
+
+/* 关掉水景：背景清空，界面回到不透明的实色（放在最后，压过上面的选择） */
+:root:not([data-theme-option-backdrop]).theme-light,
+:root:not([data-theme-option-backdrop]):not([data-theme-option-figure]).theme-light,
+:root:not([data-theme-option-backdrop])[data-theme-option-sea-life="bubbles"].theme-light,
+:root:not([data-theme-option-backdrop]):not([data-theme-option-figure])[data-theme-option-sea-life="bubbles"].theme-light {
+  --backdrop: none;
+}
+
+:root:not([data-theme-option-backdrop]).theme-dark,
+:root:not([data-theme-option-backdrop]):not([data-theme-option-figure]).theme-dark,
+:root:not([data-theme-option-backdrop])[data-theme-option-sea-life="bubbles"].theme-dark,
+:root:not([data-theme-option-backdrop]):not([data-theme-option-figure])[data-theme-option-sea-life="bubbles"].theme-dark {
+  --backdrop: none;
+}
+
+/* ---------- 选项：标题斜体 ---------- */
+
+:root[data-theme-option-h1-italic].theme-light,
+:root[data-theme-option-h1-italic].theme-dark {
+  --h1-style: italic;
+  --h2-style: italic;
+  --h1-letter-spacing: -0.005em;
+}
+
+/* ---------- 正文排版细节 ---------- */
+
+.theme-light [data-mc="content"] {
+  --h1-letter-spacing: -0.012em;
+  --h2-letter-spacing: -0.006em;
+  --paragraph-spacing: 0.7rem;
+  --blockquote-background: color-mix(in oklab, var(--brand) 6%, transparent);
+  --blockquote-border-color: color-mix(in oklab, var(--brand) 42%, transparent);
+  --blockquote-color: #2c4a56;
+  --table-header-background: color-mix(in oklab, var(--brand) 8%, transparent);
+  --code-block-background: color-mix(in oklab, var(--foreground) 5%, transparent);
+  --highlight-background: color-mix(in srgb, #8fe3f2 62%, transparent);
+  --mention-color: #0c6478;
+}
+
+.theme-dark [data-mc="content"] {
+  --h1-letter-spacing: -0.012em;
+  --h2-letter-spacing: -0.006em;
+  --paragraph-spacing: 0.7rem;
+  --blockquote-background: color-mix(in oklab, var(--brand) 12%, transparent);
+  --blockquote-border-color: color-mix(in oklab, var(--brand) 55%, transparent);
+  --blockquote-color: #b9d3dd;
+  --table-header-background: color-mix(in oklab, var(--brand) 12%, transparent);
+  --code-block-background: color-mix(in oklab, #ffffff 8%, transparent);
+  --highlight-background: color-mix(in srgb, #2f8fa6 70%, transparent);
+  --mention-color: #5fd3e8;
+}
+
+/* ---------- 锚点：主视觉画布底层的角色立绘与防穿帮保护层 ---------- */
+
+/* 主视觉画布（侧栏 + 内容列所在的圆角卡片）作为立绘的定位上下文。
+   isolation 把层叠严格限制在画布内；内容层统一置于 z-index: 1，立绘在 z-index: 0。 */
+[data-mc="page"] {
+  position: relative;
+  isolation: isolate;
+}
+
+[data-mc="page"] > * {
+  z-index: 1;
+}
+
+/* 角色立绘：贴在主视觉画布右下角底层，默认「清晰陪伴」档。
+   S6 的原则：把「存在感」和「零遮挡」拆成两件独立的事同时做到。
+   - 存在感 = 立绘自身的清晰度（浅色 0.66 / 深色 0.60，约为 S5 水印档 0.34 / 0.32 的两倍）
+     + 四周一圈深海荧光把轮廓托起来 + 轻度提饱和提对比，一眼认出蓝发女仆装大肥鱼，而不是一团灰影；
+   - 零遮挡 = 所有承载文字与按钮的块（属性分组 99%、评论卡与次级按钮 98%、列表行 86%~90%）
+     都垫上近乎不透明的水色底衬，立绘只在上层没有内容的留白处显露。两者互不抵消。
+   立绘原图已在 S5 精修（剔除发丝间全部封闭白底空洞并做边缘去白污染），本档继续沿用。 */
+.theme-light [data-mc="page"]::after,
+.theme-dark [data-mc="page"]::after {
+  content: "";
+  position: absolute;
+  right: 2rem;
+  bottom: 0;
+  width: min(21rem, 33%);
+  height: min(26rem, 62%);
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: contain;
+  pointer-events: none;
+  z-index: 0;
+  mask-image:
+    linear-gradient(180deg, transparent 0, rgb(0 0 0 / 0.6) 4%, #000 14% 100%),
+    linear-gradient(92deg, transparent 0, rgb(0 0 0 / 0.9) 10%, #000 22% 100%);
+  mask-composite: intersect;
+  -webkit-mask-image:
+    linear-gradient(180deg, transparent 0, rgb(0 0 0 / 0.6) 4%, #000 14% 100%);
+}
+
+/* 浅色「浅滩」：立绘清楚，身后一圈海玻璃青光把轮廓托起来 */
+.theme-light [data-mc="page"]::after {
+  background-image:
+    url(assets/fatfish-light.webp),
+    radial-gradient(ellipse 62% 56% at 58% 58%, color-mix(in srgb, #7fd8e6 24%, transparent), transparent 72%);
+  background-size: contain, 118% 118%;
+  filter: saturate(1.22) contrast(1.1) drop-shadow(0 10px 26px rgb(8 42 56 / 0.22));
+  opacity: 0.66;
+}
+
+/* 深色「深海」：把立绘提亮一点点、压一圈青色荧光，避免在靛青底上糊成黑块 */
+.theme-dark [data-mc="page"]::after {
+  background-image:
+    url(assets/fatfish-dark.webp),
+    radial-gradient(ellipse 62% 56% at 58% 58%, color-mix(in srgb, #5fd3e8 30%, transparent), transparent 72%);
+  background-size: contain, 118% 118%;
+  filter: saturate(1.1) brightness(1.12) contrast(1.02) drop-shadow(0 12px 30px rgb(0 0 0 / 0.45));
+  opacity: 0.6;
+}
+
+/* 存在感三档（默认 companion = 清晰陪伴） */
+:root[data-theme-option-figure-presence="subtle"].theme-light [data-mc="page"]::after {
+  opacity: 0.32;
+}
+
+:root[data-theme-option-figure-presence="subtle"].theme-dark [data-mc="page"]::after {
+  opacity: 0.3;
+}
+
+:root[data-theme-option-figure-presence="vivid"].theme-light [data-mc="page"]::after {
+  width: min(24rem, 38%);
+  height: min(30rem, 70%);
+  opacity: 0.84;
+}
+
+:root[data-theme-option-figure-presence="vivid"].theme-dark [data-mc="page"]::after {
+  width: min(24rem, 38%);
+  height: min(30rem, 70%);
+  opacity: 0.8;
+}
+
+/* 关掉立绘 */
+:root:not([data-theme-option-figure]) [data-mc="page"]::after {
+  display: none;
+}
+
+/* ---------- 内容与控件的水玻璃底衬（彻底防止右下角文字/按钮与底图混叠） ---------- */
+
+/* 左侧空间导航栏与顶栏：独立水玻璃面，不透出画布立绘 */
+.theme-light [data-mc="sidebar"] {
+  background-color: color-mix(in oklab, var(--sidebar) 92%, transparent);
+}
+
+.theme-dark [data-mc="sidebar"] {
+  background-color: color-mix(in oklab, var(--sidebar) 94%, transparent);
+}
+
+.theme-light [data-mc="page-header"] {
+  background-color: color-mix(in oklab, var(--page-canvas) 90%, transparent);
+  backdrop-filter: blur(8px);
+}
+
+.theme-dark [data-mc="page-header"] {
+  background-color: color-mix(in oklab, var(--page-canvas) 92%, transparent);
+  backdrop-filter: blur(8px);
+}
+
+/* 任务列表行与分组头：经过右下角立绘上方时自带柔和底衬，标题、标签、头像都清晰不穿帮 */
+.theme-light [data-mc="issue-row"] {
+  background-color: color-mix(in oklab, var(--page-canvas) 86%, transparent);
+}
+
+.theme-dark [data-mc="issue-row"] {
+  background-color: color-mix(in oklab, var(--page-canvas) 90%, transparent);
+}
+
+.theme-light [data-mc="issue-row"]:hover {
+  background-color: var(--surface-hover);
+}
+
+.theme-dark [data-mc="issue-row"]:hover {
+  background-color: var(--surface-hover);
+}
+
+/* 详情页外壳保持较通透，让大肥鱼在右下角留白处显露；真正承载文字与按钮的每一块另垫实底。
+   这样「立绘清晰」和「文字清晰」不再互相牵制：留白处看见人，有字处只看见字。 */
+.theme-light :is([data-mc="issue-detail"], [data-mc="issue-properties"], [data-mc="issue-activity"], [data-mc="object-page"], [data-mc="settings-page"]) {
+  background-color: color-mix(in oklab, var(--page-canvas) 46%, transparent);
+}
+
+.theme-dark :is([data-mc="issue-detail"], [data-mc="issue-properties"], [data-mc="issue-activity"], [data-mc="object-page"], [data-mc="settings-page"]) {
+  background-color: color-mix(in oklab, var(--page-canvas) 52%, transparent);
+}
+
+/* 右侧属性栏本身几乎透明：它的每一组文字都在 panel-section 里（下面垫实底），
+   底下那截空白正是大肥鱼露面的地方，不再被容器底色压掉一半。 */
+.theme-light [data-mc="issue-properties"] {
+  background-color: color-mix(in oklab, var(--page-canvas) 12%, transparent);
+}
+
+.theme-dark [data-mc="issue-properties"] {
+  background-color: color-mix(in oklab, var(--page-canvas) 18%, transparent);
+}
+
+/* 属性分组（Status / Assignee / Deliverables / Execution 等）：接近实底，立绘透不过来 */
+.theme-light [data-mc="page"] [data-mc="panel-section"]:not([data-mc="sidebar"] *) {
+  background-color: color-mix(in oklab, var(--page-canvas) 99%, transparent);
+  border-radius: var(--radius);
+}
+
+.theme-dark [data-mc="page"] [data-mc="panel-section"]:not([data-mc="sidebar"] *) {
+  background-color: color-mix(in oklab, var(--page-canvas) 99%, transparent);
+  border-radius: var(--radius);
+}
+
+/* 评论卡与输入框：文字最密的地方，底衬最实 */
+.theme-light :is([data-mc="comment"], [data-mc="comment-composer"], [data-mc="chat-input"]) {
+  background-color: color-mix(in oklab, var(--surface) 98%, transparent);
+  backdrop-filter: blur(10px);
+}
+
+.theme-dark :is([data-mc="comment"], [data-mc="comment-composer"], [data-mc="chat-input"]) {
+  background-color: color-mix(in oklab, var(--surface) 98%, transparent);
+  backdrop-filter: blur(10px);
+}
+
+/* 详情页里的次级/幽灵操作按钮（如 "+ Add property"、状态与负责人触发器）在悬浮和静止时保持清晰边界 */
+.theme-light [data-mc="page"] :is([data-slot="button"][data-variant="outline"], [data-slot="button"][data-variant="secondary"], [data-slot="select-trigger"]) {
+  background-color: color-mix(in oklab, var(--surface) 98%, transparent);
+}
+
+.theme-dark [data-mc="page"] :is([data-slot="button"][data-variant="outline"], [data-slot="button"][data-variant="secondary"], [data-slot="select-trigger"]) {
+  background-color: color-mix(in oklab, var(--surface-raised) 98%, transparent);
+}
+
+/* 空状态：大肥鱼游到角落陪你，居中的文字区不受影响 */
+.theme-light [data-mc="empty-state"][data-variant="page"] {
+  background-image:
+    url(assets/whale-badge.svg),
+    radial-gradient(ellipse 72% 62% at 50% 108%, color-mix(in oklab, var(--brand) 12%, transparent), transparent 72%);
+  background-repeat: no-repeat, no-repeat;
+  background-position: right 1.75rem bottom 1.25rem, center;
+  background-size: 4.5rem auto, 100% 100%;
+}
+
+.theme-dark [data-mc="empty-state"][data-variant="page"] {
+  background-image:
+    url(assets/whale-badge.svg),
+    radial-gradient(ellipse 72% 62% at 50% 108%, color-mix(in oklab, var(--brand) 18%, transparent), transparent 72%);
+  background-repeat: no-repeat, no-repeat;
+  background-position: right 1.75rem bottom 1.25rem, center;
+  background-size: 4.5rem auto, 100% 100%;
+}
+
+/* ---------- 锚点：一点点水下的手写习惯 ---------- */
+
+/* 当前导航行：左边一条鲸鳍青 */
+[data-mc="nav-item"][data-active="true"] {
+  box-shadow: inset 2px 0 0 var(--brand);
+}
+
+/* 当前空间按钮：一圈很淡的青色 */
+[data-mc="app-rail"] [aria-current="page"] {
+  box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--brand) 28%, transparent);
+}
+
+/* 紧急任务：左侧竖条念出优先级 */
+[data-mc="issue-row"][data-priority="urgent"] {
+  box-shadow: inset 2px 0 0 var(--priority-urgent);
+}
+
+[data-mc="board-card"][data-priority="urgent"] {
+  box-shadow: inset 2px 0 0 var(--priority-urgent), var(--surface-shadow);
+}
+
+/* 看板卡片：悬浮时像浮起一点点的水泡 */
+[data-mc="board-card"] {
+  transition: box-shadow 180ms ease, transform 180ms ease;
+}
+
+[data-mc="board-card"]:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--menu-shadow);
+}
+
+/* 智能体的评论：左侧一道很淡的水痕 */
+[data-mc="comment"][data-author-type="agent"] {
+  box-shadow: inset 2px 0 0 color-mix(in oklab, var(--brand) 30%, transparent);
+}
+
+/* 未读通知：气泡点带一点光晕 */
+[data-mc="unread-dot"] {
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--brand) 18%, transparent);
+}
+
+/* 标签：柔和的药丸，不抢文字 */
+[data-mc="label-chip"] {
+  font-weight: 500;
+}
+
+/* 减少动效的人：卡片不要位移 */
+@media (prefers-reduced-motion: reduce) {
+  [data-mc="board-card"] {
+    transition: none;
+  }
+
+  [data-mc="board-card"]:hover {
+    transform: none;
+  }
+}

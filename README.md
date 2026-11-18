@@ -6,6 +6,16 @@ A deep-sea theme for [Multica](https://multica.ai). Light mode is a sunlit shall
 
 主题作者：**音不绝**
 
+## 预览 / Preview
+
+浅色是「浅滩」，深色是「深海」。右下角留白处站着穿女仆装的大肥鱼，带文字与按钮的面板、列表行、评论卡都垫着水色底衬——人只露在留白处，绝不挡字。
+
+| 浅色 · 浅滩 Light | 深色 · 深海 Dark |
+| --- | --- |
+| ![浅色模式的浅滩界面](docs/preview-light.png) | ![深色模式的深海界面](docs/preview-dark.png) |
+
+> 预览图使用完全虚构的通用示例数据渲染，不含任何真实工作区、项目或成员信息。
+
 ## 安装 / Install
 
 - **商店 / From the store**：Multica → Settings → Appearance → Manage → 安装《大肥鱼 · 深海》（上架后可见）。
